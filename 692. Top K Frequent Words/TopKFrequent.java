@@ -7,7 +7,8 @@ class Solution {
         }
         
         // Create a priority queue to store the top k frequent words
-        PriorityQueue<String> pq = new PriorityQueue<>((a, b) -> frequencyMap.get(a).equals(frequencyMap.get(b)) ? b.compareTo(a) : frequencyMap.get(a) - frequencyMap.get(b));
+        PriorityQueue<String> pq = new PriorityQueue<>((a, b) -> frequencyMap.get(a).equals(frequencyMap.get(b)) ? 
+                                                        b.compareTo(a) : frequencyMap.get(a) - frequencyMap.get(b));
         for (String word : frequencyMap.keySet()) {
             pq.offer(word);
             if (pq.size() > k) {
