@@ -26,8 +26,8 @@ class Solution {
         } else {
             
             // Else, we will recurse on the left and the right children
-            this.recurseTree(node.left, remainingSum - node.val, pathNodes, pathsList);
-            this.recurseTree(node.right, remainingSum - node.val, pathNodes, pathsList);
+            recurseTree(node.left, remainingSum - node.val, pathNodes, pathsList);
+            recurseTree(node.right, remainingSum - node.val, pathNodes, pathsList);
         }
         
         // We need to pop the node once we are done processing ALL of it's
@@ -38,7 +38,7 @@ class Solution {
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> pathsList = new ArrayList<List<Integer>>();
         List<Integer> pathNodes = new ArrayList<Integer>();
-        this.recurseTree(root, sum, pathNodes, pathsList);
+        recurseTree(root, sum, pathNodes, pathsList);
         return pathsList;        
     }
 }
