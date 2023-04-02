@@ -3,7 +3,6 @@ class Solution {
 		return check(root, null, null);
 	}
  
-	
 	private boolean check(TreeNode root, Integer minVal, Integer maxVal) {
 		if(root == null) return true;
 
