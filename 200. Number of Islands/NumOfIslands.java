@@ -15,7 +15,6 @@ class Solution {
     private void dfs(char[][] grid, int i, int j) {
         if(i < 0 || i > grid.length-1 || j < 0 || j > grid[0].length-1 || grid[i][j] == '0') return;
         
-        
         grid[i][j] = '0';
         
         int[] rowDirs = {0, -1, +1, 0};
