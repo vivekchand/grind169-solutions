@@ -1,16 +1,16 @@
 class Solution {
 
 	public List<List<String>> accountsMerge(List<List<String>> accounts) {
-        // Create UF on the no of accounts that we have
-        UnionFind uf = new UnionFind(accounts.size());
+		// Create UF on the no of accounts that we have
+		UnionFind uf = new UnionFind(accounts.size());
 
-        Map<String, Integer> emailToFirstAccId = new HashMap<>();
+		Map<String, Integer> emailToFirstAccId = new HashMap<>();
 		for (int accId = 0; accId < accounts.size(); accId++) {
 
 			List<String> account = accounts.get(accId);
 			List<String> emails =  account.subList(1, account.size());
 
-            for (String email : emails) {
+			for (String email : emails) {
 				if (!emailToFirstAccId.containsKey(email)) {
 					emailToFirstAccId.put(email, accId);
 				} else {
